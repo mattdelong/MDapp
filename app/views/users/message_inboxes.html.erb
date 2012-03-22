@@ -1,0 +1,7 @@
+<div class= "grid_3">
+  render 'users/message_inboxes'
+</div>
+
+<div class= "grid_9">
+  render 'messages/index', :collection => @messages, :meta => { :linkable => true, :new_message? => true }
+</div>

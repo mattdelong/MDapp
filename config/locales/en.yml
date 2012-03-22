@@ -1,0 +1,55 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  site:
+    name: Venue Scout
+    welcome: Welcome to Venue Scout, your ....
+  system:
+    access_denied: Access Denied!
+  message:
+    venue_created_successfully: Venue has been created successfully!
+    changes_saved: Your changes have been saved. 
+    restricted_access: Access to this page is restricted to the venue owner
+    proposal_saved: The proposal has been saved!
+    proposal_submitted: The proposal has been submitted
+    request_deleted: Request has been deleted successfully!
+  label:
+    welcome: Welcome
+    home: Home
+    name: Name
+    email: Email
+    login: Sign in
+    logout: Sign out
+    signup: Sign up for Venue Scout
+    signin_title: Member Sign in
+    user_type: Select a member type
+    signup_planner: Event Planner
+    signup_venue: Venue Manager 
+    edit_my_profile: Edit My Profile
+    submitted_by: Submitted By
+    submitted_to: Submitted To
+    listings_title: Venue Listings
+    messages: Messages
+    new_message: New Message
+    private_messages: Private Messages
+    new_proposal: New Proposal
+    sent_proposals: Sent Proposals
+    archived_proposals: Archived Proposals
+    inbox: Inbox
+    inbox_messages: Inbox Messages
+    sent_messages: Sent Messages
+    venues_near: Venues Near
+    all_venues: All Venues
+    profile_venue_listings_title: Venues 
+    proposal_list: Proposals
+    planner: Event / Meeting Planner
+    venue_owner: Venue Owner / Manager
+    no_proposals: You currently have no active RFP's 
+    no_venues: Currently no active venues
+    no_rfps: No RFP's available
+  rfp:
+    new_rfp_title: Create a new Request For Proposal
+    new_rfp_description: To request a proposal, please provide your contact and event details and select the venue(s) you would like to receive the proposal from. 
+    
+    

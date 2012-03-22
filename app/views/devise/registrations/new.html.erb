@@ -1,0 +1,35 @@
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <div id= "signup-form">
+	<h2> <%= t('label.signup')%> </h2>
+
+    <p><%= f.label :name %><br />
+    <%= f.text_field :name %></p>
+
+    <p><%= f.label :email %><br />
+    <%= f.email_field :email %></p>
+
+    <p><%= f.label :password %><br />
+    <%= f.password_field :password %></p>
+
+    <p><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %></p>
+  
+    <div>
+      <h3> <%= t('label.user_type')%> </h3> 
+      <p class= "user_type">
+      <%= f.radio_button :role, 1, :checked => true %> <%= t('label.signup_planner')%> (I am planning an event(s)) <br />
+      </p>
+      <p class= "user_type">
+	  <%= f.radio_button :role, 2 %> <%= t('label.signup_venue')%> (I manage an event space)
+	  </p>
+    </div>
+
+    <div> <%= f.submit "Sign up" %></div>
+    <%= render :partial => "devise/shared/links" %>
+  </div>
+<% end %>
+
+

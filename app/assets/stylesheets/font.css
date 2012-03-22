@@ -1,0 +1,141 @@
+large_blue {
+  color: #6daed2;
+  font-size: 150%;
+  font-weight: 500;
+}
+
+large_green {
+  color: #1e4400;
+  font-size: 200%;
+  font-weight: 900;
+}
+
+large_black {
+  color: #000;
+  font-size: 200%;
+  font-weight: 500;
+}
+
+medium_blue {
+  color: #6daed2;
+  font-size: 150%;
+  font-weight: 500;
+}
+
+medium_green {
+  color: #3dab00;
+  font-size: 150%;
+  font-weight: 500;
+}
+
+medium_black {
+  color: #000;
+  font-size: 150%;
+  font-weight: 500;
+}
+
+medium_weight {
+  font-weight: 700;
+  font-size: 80%;
+}
+
+small_black {
+  color: black;
+  font-weight: 900;
+}
+
+small_green {
+  color: #1e4400;
+  font-weight: 800;
+}
+
+small_grey {
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+small_white {
+  color: white;
+  font-weight: 500;
+}
+
+OR {
+  float: left;
+  font-family: "Arial";
+  font-weight: 900;
+  color: #000;
+  margin-top: 15px;
+  font-size: 150%;
+}
+
+impact {
+  font-family: "Arial";
+  font-weight: 900;
+  color: #555;
+  font-size: 135%;
+}
+
+impact_white {
+  color: white;
+  font-family: "Arial";
+  font-weight: 900;
+  font-size: 135%;
+}
+
+impact_large {
+  font-family: "Arial";
+  font-weight: 900;
+  color: #333;
+  font-size: 200%;
+}
+
+impact_shadow {
+  font-family: "Arial";
+  font-weight: 900;
+  color: #555;
+  font-size: 135%;
+}
+
+impact_lite {
+  font-family: "Arial";
+  font-weight: 700;
+  color: #666;
+  font-size: 115%;
+}
+
+impact_small {
+  font-family: "Arial";
+  font-weight: 900;
+  color: #333;
+  font-size: 120%;
+}
+
+impact_small {
+  font-family: "Arial";
+  font-weight: 900;
+  color: #333;
+  font-size: 120%;
+}
+
+impact_xsmall {
+  font-family: "Arial";
+  font-weight: 900;
+  color: #333;
+  font-size: 100%;
+}
+
+small {
+  font-size: 75%;
+  color: #999;
+}
+
+fnt_grey {
+  color: #999;
+}
+
+heavy_white {
+  font-family: "Impact";
+  font-size: 125%;
+  font-weight: 300;
+  color: white;
+}

@@ -1,0 +1,22 @@
+
+<div class = "venue_management">
+  <div class = "dashboard_top_bar">
+    <h1> <%= t('label.profile_venue_listings_title')%> </h1>
+  </div>
+	
+  <div class = "dashboard_grid_medium">
+    <% if @user.venues.any? %>
+      <table>
+	    <% @user.venues.each do |venue| %>
+  	    <tr>
+          <td> <h1><%= link_to venue.company_name, venue %> </h1> </td>
+          <td> <%= link_to 'Edit', edit_venue_path(venue) %></td>
+          <td> <%= link_to 'Remove', venue, :confirm => 'Are you sure?', :method => :delete  %></td>
+        </tr>
+        <% end %>
+      </table>
+    <% else %>
+      <b> <%= t('label.no_venues')%> </b>
+    <% end %>
+  </div>
+</div>

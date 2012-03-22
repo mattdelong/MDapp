@@ -1,0 +1,29 @@
+<header> 
+  <nav>
+  	<p class= "logo"> <%= link_to logo, root_path %> </p>
+	<ul>   
+      <li> <%= link_to "How it Works", venues_path %> </li>
+      <li> <%= link_to "Browse Venues", venues_path %> </li> 
+      <li> <%= link_to "Add Venue", new_venue_path %> </li>
+    </ul>
+  </nav>
+  
+  <div class= "user_status">
+    <div class= "avatar">
+    </div>
+  
+    <% if user_signed_in? %>
+      <div class= "admin_account">
+        <%= t('label.welcome') %>, <%= link_to current_user.name, current_user %> </br>
+        <%= link_to t('label.account'), edit_registration_path(current_user) %>  </br>
+        <%= link_to t('label.logout'), destroy_user_session_path, :method => :delete %> 
+      </div>
+    <% else %>
+      <div id= "signup_signin">
+        <%= link_to t('label.signup'), new_user_registration_path %> </br>
+        Already Registered? <%= link_to t('label.login'), new_user_session_path %>  
+      </div>
+    <% end %>
+  </div>
+</header>
+
