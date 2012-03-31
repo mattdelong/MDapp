@@ -1,7 +1,7 @@
 require 'digest/md5'
 
 class User < ActiveRecord::Base
-	#include Commentable
+	include Commentable
 
   devise :database_authenticatable, 
   		 :registerable,

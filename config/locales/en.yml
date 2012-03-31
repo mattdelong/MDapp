@@ -3,130 +3,53 @@
 
 en:
   site:
-    name: Open Venue
-    welcome: Welcome to Open Venue - the place for connecting event planners with event venues!
+    name: Venue Scout
+    welcome: Welcome to Venue Scout, your ....
   system:
-    access_denied: Access denied!
-  simple_form:
-    labels:
-      login: Username or Email
-      name: Name
-      stage_identifier: Stage
-      market_identifier: Market
-      description: Description
-  helpers:
-    submit:
-      create: 'Add %{model}'
-      update: 'Edit %{model}'
-      destroy: 'Delete %{model}'
-      message:
-        create: Post
-  startup:
-    stages: Stages
-    markets: Markets
-    role_identifiers:
-      member: Member
-      employee: Employee
-      cmp: CMP
-      provider: Provider
-    proposal_stage_identifiers:
-      draft: Draft
-      submitted: Submitted
-  meta:
-    posted_by: Posted by
-    time_ago: '%{time} ago'
-    time_ago_by: '%{time} ago by'
+    access_denied: Access Denied!
+  message:
+    venue_created_successfully: Venue has been created successfully!
+    changes_saved: Your changes have been saved. 
+    restricted_access: Access to this page is restricted to the venue owner
+    proposal_saved: The proposal has been saved!
+    proposal_submitted: The proposal has been submitted
+    request_deleted: Request has been deleted successfully!
   label:
+    welcome: Welcome
     home: Home
-    loading: Loading
-    actions: Actions
-    create: Create
-    update: Update
-    add: Add
-    edit: Edit
-    update: Update
-    delete: Delete
-    remove: Remove
-    archive: Archive
-    cancel: Cancel
-    close: Close
-    confirm: Confirm
-    confirm_deletion: Confirm Deletion
-    next: Next
-    prev: Prev
     name: Name
     email: Email
-    welcome: Welcome
-    member: Member
-    sign_in: Sign in
-    sign_out: Sign out
-    sign_up: Sign up
-    new_password: New password
-    confirm_new_password: Confirm new password
-    change_my_password: Change my password
-    forgot_your_password: Forgot your password?
-    send_reset_password_instructions: Send me reset password instructions
-    resend_confirmation_instructions: Resend confirmation instructions
-    resend_unlock_instructions: Resend unlock instructions
-    edit_my_profile: Edit my profile
-    submitted_by: Submitted by
-    submitted_to: Submitted to
-    planners: Planners
-    venue: Venue
-    venues: Venues
-    organizer: Organizer
-    title: Title
-    members: Event Planning Members
-    venues: Venues
-    create_new: Create new
-    create_one_now: create one now!
-    save_draft: Save draft
-    submit_proposal: Submit proposal
-    apply_now: apply now!
-    following: Following
-    followers: Followers
-    follow: Follow
-    unfollow: Unfollow
-    followed: Followed
-    comments: Comments
-    micro_posts: Posts
-    add_micro_post: Post
-    whats_on_your_mind: What's on your mind?
-    planner_profile: Planner profile
-    business_proposal: Business Proposal
-    business_proposals: Business Proposals
-    product: Product
-    market: Market
+    login: Sign in
+    logout: Sign out
+    signup: Sign up for Venue Scout
+    signin_title: Member Sign in
+    user_type: Select a member type
+    signup_planner: Event Planner
+    signup_venue: Venue Manager 
+    edit_my_profile: Edit My Profile
+    submitted_by: Submitted By
+    submitted_to: Submitted To
+    listings_title: Venue Listings
     messages: Messages
-    new_message: New message
+    new_message: New Message
+    private_messages: Private Messages
     new_proposal: New Proposal
-    private_messages: Private messages
+    sent_proposals: Sent Proposals
+    archived_proposals: Archived Proposals
     inbox: Inbox
-    inbox_messages: Inbox messages
-    sent_messages: Sent messages
-    planner_proposals: Planner proposals
-    inbox_proposals: Inbox proposals
-    sent_proposals: Sent proposals
-    archived_proposals: Archived proposals
-    recipients: Recipients
-    messages_inbox: Messages inbox
-    proposals_inbox: Proposals inbox
-    delete_the_image_below: Delete the image below
-    contact_organizer: Contact organizer
-    details: Details
-    not_interested: Not interested
-    from: From
-    raise: Raise
-    stage: Stage
-  message:
-    proposal_saved: The proposal has been saved!
-    proposal_submitted: The proposal has been submitted to the venues!
-  text:
-    have_no_planners: You have no planners,
-    not_an_investor: You are not a venue,
-    default_text_for_proposal_review: Please review this proposal.
-    enter_recipient_names: Recipient name ...
-    enter_venue_names: Venue names ...
-    no_more_selections_allowed: No more selections are allowed.
-    message_is_archived: The message is archived.
-
+    inbox_messages: Inbox Messages
+    sent_messages: Sent Messages
+    venues_near: Venues Near
+    all_venues: All Venues
+    profile_venue_listings_title: Venues 
+    proposal_list: Proposals
+    planner: Event / Meeting Planner
+    venue_owner: Venue Owner / Manager
+    no_proposals: You currently have no active RFP's 
+    no_venues: Currently no active venues
+    no_rfps: No RFP's available
+  rfp:
+    new_rfp_title: Create a new Request For Proposal
+    new_rfp_description: To request a proposal, please provide your contact and event details and select the venue(s) you would like to receive the proposal from. 
+    
+    
