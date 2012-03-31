@@ -3,23 +3,24 @@ class UsersController < ApplicationController
 
   has_scope :page, :default => 1
 
-=begin
+  before_filter :hide_sidebar, :only => [:show, :message_inboxes]
+
   def index
     respond_to do |format|
       format.json { render :json => collection.for_auto_suggest }
       format.html { render 'users/_index', :locals => { :meta => {} } }
     end
   end
-=end
- 	
-  def index
-    @users = User.all
+  
+=begin # To display micro posts feed in user view templates - not yet implemented
+   def home
+    @micro_posts = resource.followed_micro_posts.page(params[:p])
   end
 
   def show
-  	@user = current_user
-    @user = User.find(params[:id])  
+    @micro_posts = resource.micro_posts.page(params[:p])
   end
+=end
   
   def message_inboxes
     message_type = params[:type].try(:to_sym)
@@ -40,7 +41,7 @@ class UsersController < ApplicationController
     end
   end
   
-private
+  private
 
   def collection
     User.page(params[:page])
@@ -59,5 +60,7 @@ private
   def target
     params[:target_type].constantize.find(params[:target_id])
   end
+
+
 
 end

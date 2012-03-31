@@ -1,0 +1,12 @@
+- if planner.founder == current_user && !meta[:hide_editable]
+  = render 'shared/editable', :edit_target => '#profile_details'
+
+.mini_profile.inline_edtiable_container
+  #profile_details data-target_link="#{planner_profile_details_path(planner)}"
+    = render 'planners/profile_details', :planner => planner
+  .clear
+
+  - unless meta[:hide_team_members]
+    hr
+    #profile_team
+      = render 'planners/profile_team', :planner => planner

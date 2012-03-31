@@ -1,0 +1,2 @@
+- if startup.organizer == current_user
+  = render 'shared/editable', :add_element => true, :text => t('label.add'), :url => attach_user_to_planner_path(planner, :role_identifier => role_identifier)

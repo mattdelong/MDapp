@@ -1,0 +1,12 @@
+= simple_form_for resource, :url => submit_path, :validate => true do |f|
+  = f.input :name
+  = f.input :market_identifier, :collection => Planner.markets, :value_method => :first, :label_method => :second
+  = f.input :logo, :as => :file
+  = f.input :logo_cache, :as => :hidden
+  - if resource.logo?
+    = f.input :remove_logo, :as => :boolean
+    .input
+      = label_tag ''
+      = image_tag(resource.logo_thumb)
+  = f.input :description
+  = f.button :submit

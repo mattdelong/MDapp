@@ -1,0 +1,60 @@
+ul#proposal_section_selector.multistage_selector
+  li= link_to t('label.details'), '#details'
+  li= link_to t('label.space'), '#space'
+  li= link_to t('label.amenities'), '#amenities',
+  li= link_to t('label.description'), '#description',
+  - unless meta[:hide_venues]
+    li= link_to t('label.venues'), '#venues',  :class => 'last'
+  .clear
+
+= simple_form_for resource, :url => submit_path, :validate => true, :html => { :class => 'multistage' } do |f|
+
+  fieldset#details
+    legend= t('label.details')
+    = f.input :event_title
+    = f.input :num_guests
+    = f.input :event_host_organization
+    = f.input :event_organizer
+    = f.input :start_date
+    = f.input :end_date
+    = f.input :event_frequency
+    = f.input :event_objectives
+    = f.input :event_history
+    .grouped_buttons
+      = submit_tag t('label.next'), :class => 'navigation next'
+  fieldset#space
+    legend= t('label.space')
+    h2= t('label.space')
+    = f.input :preferred_venue_type
+    = f.checkbox :outside_area
+    = f.checkbox :dining
+    br
+    h2= t('label.amenities')
+    = f.checkbox :catering
+    = f.checkbox :alcohol
+    = f.checkbox :parking
+    = f.checkbox :wifi
+    = f.input :av_equipment
+    = f.input :insurance_required
+    .grouped_buttons
+      = submit_tag t('label.prev'), :class => 'navigation prev'
+      = submit_tag t('label.next'), :class => 'navigation next'
+  fieldset#description
+    legend= t('label.description')
+    = f.input :event_description
+    = f.input :budget
+    .grouped_buttons
+      = submit_tag t('label.prev'), :class => 'navigation prev'
+      = submit_tag t('label.next'), :class => 'navigation next' unless meta[:hide_venues]
+
+  - unless meta[:hide_venues]
+    fieldset#venues
+      legend= t('label.venues')
+      .multi_add.input.string data-target="venues" data-start_text="#{t('text.enter_venue_names')}" data-selection_limit="#{Settings.recipient_limit.proposals}"
+        = label_tag :venues, t('label.venues')
+        = text_field_tag :venues, resource.venues.map(&:id).join(','), :class => 'string required', :'data-source' => resource.venues.for_auto_suggest.to_json
+      .grouped_buttons
+        = submit_tag t('label.prev'), :class => 'navigation prev'
+      - unless resource.proposal_stage_identifier == 'submitted'
+        = submit_tag t('label.save_draft')
+        = submit_tag t('label.submit_proposal')

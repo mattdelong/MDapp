@@ -1,0 +1,17 @@
+hr
+.message_user
+  = render 'planners/avatar', :planner => resource.proposal.planner
+.message_container
+  .message_meta
+    =' link_to resource.proposal.planner.name, planner_path(resource.proposal.planner)
+    = time_ago(resource.created_at)
+  .message_meta_secondary
+    = "#{t('label.organizer')}: "
+    =' link_to resource.user.name, username_path(resource.user.username)
+    = "#{t('label.from')}: #{resource.user.location}, #{t('label.raise')}: #{number_to_currency(resource.proposal.planner.funds_to_raise)}, #{t('label.stage')}: #{resource.proposal.planner.stage}"
+  .message_content
+    - if meta[:linkable]
+      = link_to resource.content, my_private_message_path(resource)
+    - else
+      = resource.content
+

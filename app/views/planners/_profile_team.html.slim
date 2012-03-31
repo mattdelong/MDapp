@@ -1,0 +1,23 @@
+.team.inline_popup data-target_link="#{planner_profile_team_path(planner)}" data-edit_target="#profile_team"
+    h2= t('label.members')
+    = render 'planners/add_user_link', :planner => planner, :role_identifier => 'member'
+    = render 'users/index', :collection => planner.members, :meta => { :removable => true, :editable => true, :parent => planner, :role_identifier => 'member' }
+    .clear
+
+.team
+  h2= t('label.venues')
+  = render 'planners/add_user_link', :planner => planner, :role_identifier => 'venue'
+  = render 'users/index', :collection => planner.venues, :meta => { :removable => true, :editable => true, :parent => planner, :role_identifier => 'venue' }
+  .clear
+
+.team
+  h2= t('label.advisors')
+  = render 'planners/add_user_link', :planner => planner, :role_identifier => 'advisor'
+  = render 'users/index', :collection => planner.advisors, :meta => { :removable => true, :editable => true, :parent => planner, :role_identifier => 'advisor' }
+  .clear
+
+.team
+  h2= t('label.incubators')
+  = render 'planners/add_user_link', :planner => planner, :role_identifier => 'incubator'
+  = render 'users/index', :collection => planner.incubators, :meta => { :removable => true, :editable => true, :parent => planner, :role_identifier => 'incubator' }
+  .clear

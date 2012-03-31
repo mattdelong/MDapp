@@ -1,0 +1,18 @@
+ul.resource_list.planner_list
+  - collection.each do |planner|
+    li.mini_profile
+      hr
+
+      .profile_pic
+        = render 'avatar', :planner => planner
+
+      .profile_meta
+        h2= link_to planner.name, planner_path(planner)
+        ul
+          li.secondary
+            = "#{t('label.organizer')}: "
+            =' link_to planner.organizer.name, username_path(planner.organizer.username)
+      .profile_metrics
+        .follow_button= follow_button(planner)
+
+= show_pagination collection

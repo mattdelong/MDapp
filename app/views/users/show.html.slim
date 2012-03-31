@@ -1,0 +1,7 @@
+.grid_6
+  = render 'users/mini_profile', :user => resource, :meta => { :show_user_roles => true }
+  = render 'users/planners', :user => resource if resource.is_planner?
+  = render 'users/venue', :user => resource if resource.is_venue?
+
+.grid_6
+  = render 'messages/index', :collection => @micro_posts, :meta => {}

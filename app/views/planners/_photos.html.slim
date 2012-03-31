@@ -1,0 +1,7 @@
+#gallery data-target_link="#{planner_photos_path(planner)}"
+  #slideshow
+    - if planner.photos.any?
+      - planner.photos.each do |photo|
+        = link_to image_tag(photo.photo.slideshow), photo.photo.url, :rel => 'planner_slideshow'
+    - else
+      = image_tag(planner.logo_full)

@@ -1,0 +1,19 @@
+.grid_6
+  = render 'mini_profile', :planner => resource, :meta => {}
+.grid_6.inline_edtiable_container
+  - if resource.founder == current_user
+    = render 'shared/editable', :edit_target => '#gallery', :url => planner_upload_photos_path(resource)
+  h2 ...
+  = render 'photos', :planner => resource
+  = render 'comments', :resource => resource
+
+- if resource.organizer == current_user
+  .grid_12
+    hr
+    h2= t('label.business_proposals')
+    ul
+      - if resource.proposals.any?
+        - resource.proposals.each_with_index do |proposal, index|
+          li= link_to "#{t('label.business_proposal')} #{index + 1} (#{t("planner.proposal_stage_identifiers.#{proposal.proposal_stage_identifier}")})", edit_planner_proposal_path(resource, proposal)
+      - else
+        li.create_new= link_to t('label.create_new'), new_planner_proposal_path(resource)

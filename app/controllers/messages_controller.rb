@@ -3,8 +3,11 @@ class MessagesController < ApplicationController
 
   defaults :collection_name => 'comments'
 
+  belongs_to :planner
+
   has_scope :p, :default => 1
 
+  before_filter :hide_sidebar, :only => [:show_private_message]
   before_filter :ensure_ownership, :only => [:show_private_message, :reply_private_message]
 
   def create

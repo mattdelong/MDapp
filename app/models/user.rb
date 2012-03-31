@@ -1,5 +1,7 @@
 require 'digest/md5'
+
 class User < ActiveRecord::Base
+	#include Commentable
 
   devise :database_authenticatable, 
   		 :registerable,
@@ -7,31 +9,32 @@ class User < ActiveRecord::Base
          :rememberable, 
          :trackable, 
          :validatable
-         
-  attr_readonly :messages_count
 
-  attr_accessible :username,
-                  :name,
-                  :email,
-                  :role,
-                  :password,
-                  :password_confirmation,
-                  :remember_me
-      
-  #associations            
-  has_many  :messages, :order => 'created_at DESC'
-  has_many  :venues
-  has_many  :rfps
-  has_one   :planner_profile
+  attr_accessor   :login
+  attr_accessible :email, 
+  				  :password, 
+  				  :password_confirmation, 
+  				  :remember_me
+  				  
+  has_and_belongs_to_many :proposals, :join_table => :proposal_for_venues
   
-  #validations                 
-  validates :email,    :presence 	 => true
+  has_many :planner_users, :foreign_key => 'user_email', :primary_key => 'email'
+  has_many :planners, :through => :planner_users
+
+  				  
+  validates :username, :presence     => true,
+                       :uniqueness   => { :case_sensitive => false },
+                       :length       => { :within => 4..20 },
+                       :format       => { :with => /^[A-Za-z0-9_]+$/ }
   validates :name,     :presence     => true,
-                       :length       => { :within => 1..30 }
-                       
-  #scope  :planners,		where { planner_profile.user_id != nil}
-                       
-  #messaging system             
+                       :length       => { :within => 4..30 }
+
+  scope :new_users,     joins { [planner_users.outer, venue.outer] }.where { (planner_users.user_email == nil) & (venue.user_id == nil) }
+  scope :event_planners, joins { planner_users }.where { planner_users.user_email != nil }
+  scope :venues,     joins { venue }.where { venue.user_id != nil }
+              
+  before_save :email_nomarlisation
+
   def incoming_messages
     comments.private_only.topics
   end
@@ -76,11 +79,95 @@ class User < ActiveRecord::Base
     !!is_admin
   end
   
-  def is_planner?
-  	planner_profile.present?
+  def is_new_user?
+    !is_event_planner? && !is_venue?
   end
 
-  				  
+  def is_event_planner?
+    planners.present?
+  end
+
+  def is_venue?
+    venue.present?
+  end
+
+  def avatar(size = 80)
+    "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}?s=#{size}"
+  end
   
+  def send_private_message(target_user, content, extras = {})
+    messages.create!({
+      :content     => content,
+      :is_private  => true,
+      :target_id   => target_user.id,
+      :target_type => 'User'
+    }.merge(extras)) && reload
+  end
+
+  def reply_private_message(topic, content, extras = {})
+    messages.create!({
+      :content     => content,
+      :is_private  => true,
+      :target_id   => topic.user.id,
+      :target_type => 'User',
+      :topic_id    => topic.id
+    }.merge(extras)) && reload
+  end
+
+
   
+  protected
+  
+  # Devise's support for login using the :login virtual attribute
+  class << self
+    def find_for_database_authentication(warden_conditions)
+      conditions = warden_conditions.dup
+      login      = conditions.delete(:login)
+      where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    end
+
+    def send_reset_password_instructions(attributes={})
+      recoverable = find_recoverable_or_initialize_with_errors(reset_password_keys, attributes, :not_found)
+      recoverable.send_reset_password_instructions if recoverable.persisted?
+      recoverable
+    end
+
+    def find_recoverable_or_initialize_with_errors(required_attributes, attributes, error=:invalid)
+      (case_insensitive_keys || []).each { |k| attributes[k].try(:downcase!) }
+
+      attributes = attributes.slice(*required_attributes)
+      attributes.delete_if { |key, value| value.blank? }
+
+      if attributes.size == required_attributes.size
+        if attributes.has_key?(:login)
+           login = attributes.delete(:login)
+           record = find_record(login)
+        else
+          record = where(attributes).first
+        end
+      end
+
+      unless record
+        record = new
+
+        required_attributes.each do |key|
+          value = attributes[key]
+          record.send("#{key}=", value)
+          record.errors.add(key, value.present? ? error : :blank)
+        end
+      end
+      record
+    end
+
+    def find_record(login)
+      where(["username = :value OR email = :value", { :value => login }]).first
+    end
+  end
+
+  private
+
+  def email_nomarlisation
+    self.email = email.strip.downcase
+  end
+
 end

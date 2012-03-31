@@ -1,0 +1,13 @@
+.profile_pic
+  = image_tag(planner.logo_thumb)
+
+.profile_meta
+  h2= planner.name
+  ul
+    li= planner.location
+    li= planner.market
+
+.profile_details
+  = render 'shared/popularity_metrics', :resource => planner
+  hr
+  p= planner.description

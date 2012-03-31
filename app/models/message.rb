@@ -1,8 +1,11 @@
 class Message < ActiveRecord::Base
-	
+  belongs_to :proposal
   belongs_to :user, :counter_cache => :messages_count
+  belongs_to :target, :polymorphic => true, :counter_cache => :comments_count
+
   belongs_to :topic, :class_name => 'Message', :foreign_key => 'topic_id'
-	
+  has_many :replies, :class_name => 'Message', :foreign_key => 'topic_id'
+
   validates :content, :presence => true,
                       :length   => { :maximum => 140 }
 
@@ -19,7 +22,7 @@ class Message < ActiveRecord::Base
   scope :without_proposal, where { proposal_id == nil }
   #scope :micro_posts,      where(:target_id => nil)
   scope :on_users,         where(:target_type => 'User')
-  scope :on_planner,      where(:target_type => 'Planner')
+  scope :on_planners,      where(:target_type => 'Planner')
 
   def is_public?
     !is_private
@@ -48,5 +51,4 @@ class Message < ActiveRecord::Base
     end
   end
 
-	
 end
