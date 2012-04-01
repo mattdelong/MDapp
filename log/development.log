@@ -72188,3 +72188,455 @@ ActionView::Template::Error (undefined method `any?' for nil:NilClass):
   Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (30.0ms)
   Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
   Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (70.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-31 21:07:59 -0700
+Processing by UsersController#home as HTML
+  Rendered messages/_new.html.slim (390.6ms)
+  Rendered messages/_index.html.slim (200.3ms)
+  Rendered users/home.html.slim within layouts/application (871.3ms)
+Completed 500 Internal Server Error in 1292ms
+
+ActionView::Template::Error (undefined method `any?' for nil:NilClass):
+    8:       = f.input :content
+    9:       = f.button :submit
+    10:     .clear
+    11: - if collection.any?
+    12:   ul#messages
+    13:     - collection.each do |resource|
+    14:       li.message= render "messages/#{meta[:show_view] || 'show'}", :resource => resource, :meta => meta
+  app/views/messages/_index.html.slim:11:in `_app_views_messages__index_html_slim__584941629_20118432'
+  app/views/users/home.html.slim:2:in `_app_views_users_home_html_slim___995712197_18157572'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (30.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (30.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (80.1ms)
+
+
+Started GET "/planners" for 127.0.0.1 at 2012-03-31 21:14:26 -0700
+
+ActionController::RoutingError (uninitialized constant Planner::LogoUploader):
+  app/models/planner.rb:5:in `<class:Planner>'
+  app/models/planner.rb:1:in `<top (required)>'
+  app/controllers/planners_controller.rb:1:in `<top (required)>'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2012-03-31 21:14:40 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2012-03-31 21:14:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (60.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1 OFFSET 0[0m
+Completed 500 Internal Server Error in 481ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=1):
+  app/controllers/users_controller.rb:54:in `resource'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (20.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (60.1ms)
+  [1m[36m (40.1ms)[0m  [1mDROP TABLE `messages`[0m
+  [1m[35m (150.2ms)[0m  CREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `is_read` tinyint(1) DEFAULT 0, `is_private` tinyint(1) DEFAULT 0, `is_archived` tinyint(1) DEFAULT 0, `target_id` int(11), `target_type` varchar(255), `user_id` int(11), `proposal_id` int(11), `topic_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (570.8ms)[0m  [1mCREATE INDEX `comments_by_type` ON `messages` (`is_private`, `target_type`, `target_id`)[0m
+  [1m[35m (971.4ms)[0m  CREATE INDEX `comments_by_type_by_read` ON `messages` (`is_read`, `is_private`, `target_type`, `target_id`)
+  [1m[36m (360.5ms)[0m  [1mCREATE INDEX `index_messages_on_topic_id` ON `messages` (`topic_id`)[0m
+  [1m[35m (280.4ms)[0m  CREATE INDEX `comments_by_archived_by_proposal` ON `messages` (`user_id`, `is_private`, `is_archived`, `proposal_id`)
+  [1m[36m (350.5ms)[0m  [1mCREATE INDEX `comments_by_type_by_user` ON `messages` (`user_id`, `is_private`, `target_type`, `target_id`)[0m
+  [1m[35m (290.4ms)[0m  CREATE INDEX `index_messages_on_user_id_and_proposal_id` ON `messages` (`user_id`, `proposal_id`)
+  [1m[36m (320.5ms)[0m  [1mCREATE INDEX `index_messages_on_user_id` ON `messages` (`user_id`)[0m
+  [1m[35m (60.1ms)[0m  DROP TABLE `planner_users`
+  [1m[36m (190.3ms)[0m  [1mCREATE TABLE `planner_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `planner_id` int(11), `user_email` varchar(255), `role_identifier` varchar(255), `member_title` varchar(255) DEFAULT '', `confirmed` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (400.6ms)[0m  CREATE INDEX `index_planner_users_on_confirmed` ON `planner_users` (`confirmed`)
+  [1m[36m (240.3ms)[0m  [1mCREATE INDEX `index_planner_users_on_planner_id_and_confirmed` ON `planner_users` (`planner_id`, `confirmed`)[0m
+  [1m[35m (260.4ms)[0m  CREATE INDEX `index_planner_users_on_planner_id_and_user_email` ON `planner_users` (`planner_id`, `user_email`)
+  [1m[36m (310.4ms)[0m  [1mCREATE INDEX `index_planner_users_on_planner_id` ON `planner_users` (`planner_id`)[0m
+  [1m[35m (260.4ms)[0m  CREATE INDEX `index_planner_users_on_user_email` ON `planner_users` (`user_email`)
+  [1m[36m (40.1ms)[0m  [1mDROP TABLE `planners`[0m
+  [1m[35m (70.1ms)[0m  CREATE TABLE `planners` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `company` varchar(255), `email` varchar(255), `phone1` varchar(255), `phone2` varchar(255), `facebook_url` varchar(255), `twitter_url` varchar(255), `market_identifier` varchar(255), `location` varchar(255), `description` text, `web_url` varchar(255), `comments_count` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (290.4ms)[0m  [1mCREATE INDEX `index_planners_on_location` ON `planners` (`location`)[0m
+  [1m[35m (360.5ms)[0m  CREATE INDEX `index_planners_on_market_identifier_and_location` ON `planners` (`market_identifier`, `location`)
+  [1m[36m (400.6ms)[0m  [1mCREATE UNIQUE INDEX `index_planners_on_name` ON `planners` (`name`)[0m
+  [1m[35m (110.2ms)[0m  DROP TABLE `proposal_for_venues`
+  [1m[36m (450.6ms)[0m  [1mCREATE TABLE `proposal_for_venues` (`proposal_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (330.5ms)[0m  CREATE INDEX `index_proposal_for_venues_on_proposal_id_and_user_id` ON `proposal_for_venues` (`proposal_id`, `user_id`)
+  [1m[36m (250.4ms)[0m  [1mCREATE INDEX `index_proposal_for_venues_on_proposal_id` ON `proposal_for_venues` (`proposal_id`)[0m
+  [1m[35m (420.6ms)[0m  CREATE INDEX `index_proposal_for_venues_on_user_id` ON `proposal_for_venues` (`user_id`)
+  [1m[36m (30.0ms)[0m  [1mDROP TABLE `proposals`[0m
+  [1m[35m (80.1ms)[0m  CREATE TABLE `proposals` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `proposal_stage_identifier` varchar(255), `event_title` varchar(255), `num_guests` varchar(255), `event_host_organization` varchar(255), `event_organizer` varchar(255), `event_type` varchar(255), `start_date` date, `end_date` date, `date_firm` tinyint(1), `event_frequency` varchar(255), `event_objectives` varchar(255), `event_history` varchar(255), `event_description` text, `budget_amount` int(11) DEFAULT 0, `response_by` date, `preferred_venue_type` varchar(255), `catering` tinyint(1), `alcohol` tinyint(1), `parking` tinyint(1), `wifi` tinyint(1), `av_equipment` tinyint(1), `dining` tinyint(1), `outside_area` tinyint(1), `insurance_required` tinyint(1), `planner_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (250.4ms)[0m  [1mCREATE INDEX `index_proposals_on_planner_id` ON `proposals` (`planner_id`)[0m
+  [1m[35m (250.4ms)[0m  CREATE INDEX `index_proposals_on_proposal_stage_identifier` ON `proposals` (`proposal_stage_identifier`)
+  [1m[36m (80.1ms)[0m  [1mDROP TABLE `users`[0m
+  [1m[35m (100.1ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime, `username` varchar(255), `name` varchar(255), `location` varchar(255), `authentication_token` varchar(255), `comments_count` int(11), `messages_count` int(11), `is_admin` tinyint(1)) ENGINE=InnoDB
+  [1m[36m (290.4ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (300.4ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (60.1ms)[0m  [1mDROP TABLE `venue_profiles`[0m
+  [1m[35m (80.1ms)[0m  CREATE TABLE `venue_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tagline` varchar(255), `venue_type` varchar(255), `description` text, `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (320.5ms)[0m  [1mCREATE INDEX `index_venue_profiles_on_user_id` ON `venue_profiles` (`user_id`)[0m
+  [1m[35m (10.0ms)[0m  SELECT version FROM `schema_migrations`
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-31 21:26:52 -0700
+Processing by UsersController#home as HTML
+  Rendered messages/_new.html.slim (360.5ms)
+  Rendered messages/_index.html.slim (210.3ms)
+  Rendered users/home.html.slim within layouts/application (811.2ms)
+Completed 500 Internal Server Error in 1212ms
+
+ActionView::Template::Error (undefined method `any?' for nil:NilClass):
+    8:       = f.input :content
+    9:       = f.button :submit
+    10:     .clear
+    11: - if collection.any?
+    12:   ul#messages
+    13:     - collection.each do |resource|
+    14:       li.message= render "messages/#{meta[:show_view] || 'show'}", :resource => resource, :meta => meta
+  app/views/messages/_index.html.slim:11:in `_app_views_messages__index_html_slim__177682394_20231148'
+  app/views/users/home.html.slim:2:in `_app_views_users_home_html_slim__483223992_18426600'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (40.1ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (80.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-31 21:31:35 -0700
+Processing by UsersController#home as HTML
+  Rendered messages/_new.html.slim (170.2ms)
+  Rendered messages/_index.html.slim (0.0ms)
+  Rendered users/home.html.slim within layouts/application (190.3ms)
+Completed 500 Internal Server Error in 240ms
+
+ActionView::Template::Error (undefined method `any?' for nil:NilClass):
+    8:       = f.input :content
+    9:       = f.button :submit
+    10:     .clear
+    11: - if collection.any?
+    12:   ul#messages
+    13:     - collection.each do |resource|
+    14:       li.message= render "messages/#{meta[:show_view] || 'show'}", :resource => resource, :meta => meta
+  app/views/messages/_index.html.slim:11:in `_app_views_messages__index_html_slim__177682394_20231148'
+  app/views/users/home.html.slim:2:in `_app_views_users_home_html_slim__483223992_18426600'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (30.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (70.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-31 21:31:41 -0700
+Processing by UsersController#home as HTML
+  Rendered messages/_new.html.slim (10.0ms)
+  Rendered messages/_index.html.slim (10.0ms)
+  Rendered users/home.html.slim within layouts/application (40.1ms)
+Completed 500 Internal Server Error in 130ms
+
+ActionView::Template::Error (undefined method `any?' for nil:NilClass):
+    8:       = f.input :content
+    9:       = f.button :submit
+    10:     .clear
+    11: - if collection.any?
+    12:   ul#messages
+    13:     - collection.each do |resource|
+    14:       li.message= render "messages/#{meta[:show_view] || 'show'}", :resource => resource, :meta => meta
+  app/views/messages/_index.html.slim:11:in `_app_views_messages__index_html_slim__177682394_20231148'
+  app/views/users/home.html.slim:2:in `_app_views_users_home_html_slim__483223992_18426600'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (20.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (60.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-31 22:10:41 -0700
+Processing by UsersController#home as HTML
+  Rendered messages/_new.html.slim (350.5ms)
+  Rendered messages/_index.html.slim (330.5ms)
+  Rendered users/home.html.slim within layouts/application (1181.7ms)
+Completed 500 Internal Server Error in 1773ms
+
+ActionView::Template::Error (undefined method `any?' for nil:NilClass):
+    8:       = f.input :content
+    9:       = f.button :submit
+    10:     .clear
+    11: - if collection.any?
+    12:   ul#messages
+    13:     - collection.each do |resource|
+    14:       li.message= render "messages/#{meta[:show_view] || 'show'}", :resource => resource, :meta => meta
+  app/views/messages/_index.html.slim:11:in `_app_views_messages__index_html_slim__966040086_20104800'
+  app/views/users/home.html.slim:2:in `_app_views_users_home_html_slim__420934825_19324692'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (30.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (20.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (90.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2012-03-31 22:10:54 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1 OFFSET 0[0m
+Completed 500 Internal Server Error in 310ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=1):
+  app/controllers/users_controller.rb:54:in `resource'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (20.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.1ms)
+
+
+Started GET "/users/matt" for 127.0.0.1 at 2012-03-31 22:11:03 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"matt"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 0 LIMIT 1 OFFSET 0
+Completed 500 Internal Server Error in 20ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=matt):
+  app/controllers/users_controller.rb:54:in `resource'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (20.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (70.1ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2012-03-31 22:11:12 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT `users`.* FROM `users` LIMIT 25 OFFSET 0[0m
+  [1m[35m (110.2ms)[0m  SELECT COUNT(*) FROM `users` 
+  Rendered users/_index.html.slim within layouts/application (230.3ms)
+Compiled inc/960_12_10_10.css  (0ms)  (pid 9532)
+Compiled inc/html5-boilerplate.css  (0ms)  (pid 9532)
+Compiled inc/jquery.autoSuggest.css  (0ms)  (pid 9532)
+Compiled inc/jquery.slideshow.lite.css  (0ms)  (pid 9532)
+Compiled inc/reset.css  (10ms)  (pid 9532)
+Compiled style.css  (1051ms)  (pid 9532)
+Compiled venues.css  (40ms)  (pid 9532)
+Compiled application.css  (3535ms)  (pid 9532)
+Compiled modernizr.js  (10ms)  (pid 9532)
+Compiled jquery.js  (50ms)  (pid 9532)
+Compiled jquery_ujs.js  (0ms)  (pid 9532)
+Compiled rails.validations.js  (30ms)  (pid 9532)
+Compiled _global_variables.js  (2323ms)  (pid 9532)
+Compiled concerns/editable.js  (1021ms)  (pid 9532)
+Compiled concerns/form.js  (811ms)  (pid 9532)
+Compiled concerns/gallery.js  (721ms)  (pid 9532)
+Compiled libs/jquery/jquery.autoSuggest.js  (10ms)  (pid 9532)
+Compiled libs/jquery/jquery.elastic.js  (0ms)  (pid 9532)
+Compiled libs/jquery/jquery.fancybox.pack.js  (10ms)  (pid 9532)
+Compiled libs/jquery/jquery.form.js  (10ms)  (pid 9532)
+Compiled libs/jquery/jquery.livequery.js  (0ms)  (pid 9532)
+Compiled libs/jquery/jquery.slideshow.lite.js  (20ms)  (pid 9532)
+Compiled libs/nested_form.js  (0ms)  (pid 9532)
+Compiled private_message.js  (861ms)  (pid 9532)
+Compiled application.js  (10414ms)  (pid 9532)
+  Rendered layouts/sidebars/_public.html.slim (10.0ms)
+Completed 200 OK in 15582ms (Views: 15462.2ms | ActiveRecord: 110.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-31 22:11:28 -0700
+Served asset /application.css - 200 OK (110ms)
+
+
+Started GET "/assets/inc/960_12_10_10.css?body=1" for 127.0.0.1 at 2012-03-31 22:11:28 -0700
+Served asset /inc/960_12_10_10.css - 200 OK (10ms)
+
+
+Started GET "/assets/inc/html5-boilerplate.css?body=1" for 127.0.0.1 at 2012-03-31 22:11:28 -0700
+Served asset /inc/html5-boilerplate.css - 200 OK (10ms)
+
+
+Started GET "/assets/inc/jquery.autoSuggest.css?body=1" for 127.0.0.1 at 2012-03-31 22:11:29 -0700
+Served asset /inc/jquery.autoSuggest.css - 200 OK (10ms)
+
+
+Started GET "/assets/inc/jquery.slideshow.lite.css?body=1" for 127.0.0.1 at 2012-03-31 22:11:29 -0700
+Served asset /inc/jquery.slideshow.lite.css - 200 OK (20ms)
+
+
+Started GET "/assets/inc/reset.css?body=1" for 127.0.0.1 at 2012-03-31 22:11:29 -0700
+Served asset /inc/reset.css - 200 OK (10ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2012-03-31 22:11:29 -0700
+Served asset /style.css - 200 OK (20ms)
+
+
+Started GET "/assets/venues.css?body=1" for 127.0.0.1 at 2012-03-31 22:11:29 -0700
+Served asset /venues.css - 200 OK (20ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:29 -0700
+Served asset /modernizr.js - 200 OK (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:29 -0700
+Served asset /jquery.js - 200 OK (180ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:29 -0700
+Served asset /jquery_ujs.js - 200 OK (50ms)
+
+
+Started GET "/assets/rails.validations.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:29 -0700
+Served asset /rails.validations.js - 200 OK (70ms)
+
+
+Started GET "/assets/_global_variables.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:30 -0700
+Served asset /_global_variables.js - 200 OK (10ms)
+
+
+Started GET "/assets/concerns/editable.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:30 -0700
+Served asset /concerns/editable.js - 200 OK (20ms)
+
+
+Started GET "/assets/concerns/form.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:30 -0700
+Served asset /concerns/form.js - 200 OK (30ms)
+
+
+Started GET "/assets/concerns/gallery.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:30 -0700
+Served asset /concerns/gallery.js - 200 OK (30ms)
+
+
+Started GET "/assets/libs/jquery/jquery.autoSuggest.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:30 -0700
+Served asset /libs/jquery/jquery.autoSuggest.js - 200 OK (20ms)
+
+
+Started GET "/assets/libs/jquery/jquery.elastic.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:30 -0700
+Served asset /libs/jquery/jquery.elastic.js - 200 OK (40ms)
+
+
+Started GET "/assets/libs/jquery/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:30 -0700
+Served asset /libs/jquery/jquery.fancybox.pack.js - 200 OK (20ms)
+
+
+Started GET "/assets/libs/jquery/jquery.form.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:31 -0700
+Served asset /libs/jquery/jquery.form.js - 200 OK (40ms)
+
+
+Started GET "/assets/libs/jquery/jquery.livequery.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:31 -0700
+Served asset /libs/jquery/jquery.livequery.js - 200 OK (30ms)
+
+
+Started GET "/assets/libs/jquery/jquery.slideshow.lite.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:31 -0700
+Served asset /libs/jquery/jquery.slideshow.lite.js - 200 OK (10ms)
+
+
+Started GET "/assets/libs/nested_form.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:31 -0700
+Served asset /libs/nested_form.js - 200 OK (10ms)
+
+
+Started GET "/assets/private_message.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:31 -0700
+Served asset /private_message.js - 200 OK (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-31 22:11:31 -0700
+Served asset /application.js - 200 OK (130ms)
+
+
+Started GET "/planners" for 127.0.0.1 at 2012-03-31 22:11:58 -0700
+
+ActionController::RoutingError (uninitialized constant Planner::LogoUploader):
+  app/models/planner.rb:5:in `<class:Planner>'
+  app/models/planner.rb:1:in `<top (required)>'
+  app/controllers/planners_controller.rb:1:in `<top (required)>'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/planners/1" for 127.0.0.1 at 2012-03-31 22:12:23 -0700
+
+NoMethodError (undefined method `key?' for nil:NilClass):
+  actionpack (3.2.1) lib/action_controller/metal/hide_actions.rb:36:in `visible_action?'
+  actionpack (3.2.1) lib/action_controller/metal/hide_actions.rb:18:in `method_for_action'
+  actionpack (3.2.1) lib/action_controller/metal/implicit_render.rb:14:in `method_for_action'
+  actionpack (3.2.1) lib/action_controller/metal/compatibility.rb:61:in `method_for_action'
+  actionpack (3.2.1) lib/abstract_controller/base.rb:115:in `process'
+  actionpack (3.2.1) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.1) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.1) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.1) lib/action_dispatch/routing/route_set.rb:66:in `call'
+  actionpack (3.2.1) lib/action_dispatch/routing/route_set.rb:66:in `dispatch'
+  actionpack (3.2.1) lib/action_dispatch/routing/route_set.rb:30:in `call'
+  journey (1.0.1) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.1) lib/journey/router.rb:56:in `each'
+  journey (1.0.1) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.1) lib/action_dispatch/routing/route_set.rb:589:in `call'
+  client_side_validations (3.1.4) lib/client_side_validations/middleware.rb:18:in `call'
+  warden (1.1.0) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.0) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.0) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:405:in `_run__969063476__call__779701749__callbacks'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (20.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.1ms)

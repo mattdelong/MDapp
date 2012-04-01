@@ -16,7 +16,11 @@ module Venuescout
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(
+      #{config.root}/lib
+      #{config.root}/app/controllers/concerns
+      #{config.root}/app/models/concerns
+    )
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -52,6 +56,12 @@ module Venuescout
 
     # Enable the asset pipeline
     config.assets.enabled = true
+
+    config.generators do |g|
+      g.template_engine :slim
+      g.test_framework :rspec
+    end
+
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

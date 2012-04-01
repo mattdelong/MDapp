@@ -20,7 +20,7 @@ class Message < ActiveRecord::Base
   scope :unarchived,       where(:is_archived => false)
   scope :with_proposal,    where { proposal_id != nil }
   scope :without_proposal, where { proposal_id == nil }
-  #scope :micro_posts,      where(:target_id => nil)
+  scope :micro_posts,      where(:target_id => nil)
   scope :on_users,         where(:target_type => 'User')
   scope :on_planners,      where(:target_type => 'Planner')
 
