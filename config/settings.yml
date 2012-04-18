@@ -1,0 +1,30 @@
+currencies:
+  - USD
+  - CNY
+recipient_limit:
+  private_messages: 1
+  proposals: 5
+group:
+  logo:
+    gallery:
+      width: 690
+      height: 450
+    full:
+      width: 460
+      height: 300
+    thumb:
+      width: 153
+      height: 100
+    avatar:
+      width: 50
+      height: 50
+planner:
+  proposal:
+    limit: 1
+    questions:
+      en:
+        - question 1.
+        - question 2?
+        - question 3.
+        - question 4?
+        - question 6?

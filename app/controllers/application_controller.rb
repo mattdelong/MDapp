@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 
   layout proc { |controller| controller.request.xhr? ? nil : 'application' }
 
-  #before_filter :require_login,            :unless => :devise_controller?
-  before_filter :ensure_organizer,         :unless => :devise_controller?, :except => [:index, :show]
+  before_filter :require_login,            :unless => :devise_controller?
+  before_filter :ensure_ownership,         :unless => :devise_controller?, :except => [:index, :show]
   after_filter  :record_last_visited_page, :unless => :devise_controller?, :if => Proc.new { request.get? && !request.xhr? }
 
   protected
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     redirect_to new_user_session_url unless current_user
   end
   
-  def ensure_organizer
+  def ensure_ownership
     if resource_class == User
       deny_access unless current_user == resource
     elsif params.key?(:user_id)

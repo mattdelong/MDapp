@@ -3,8 +3,8 @@
 
 en:
   site:
-    name: Open Venue
-    welcome: Welcome to Open Venue - the place for connecting event planners with event venues!
+    name: Venue Scout
+    welcome: Venue Scout Platform - Alpha 
   system:
     access_denied: Access denied!
   simple_form:
@@ -71,8 +71,10 @@ en:
     edit_my_profile: Edit my profile
     submitted_by: Submitted by
     submitted_to: Submitted to
+    new_user: New User
+    planner: Event Planner
     planners: Planners
-    venue: Venue
+    venue: Venue Manager / Owner
     venues: Venues
     organizer: Organizer
     title: Title
@@ -122,11 +124,12 @@ en:
     proposal_saved: The proposal has been saved!
     proposal_submitted: The proposal has been submitted to the venues!
   text:
-    have_no_planners: You have no planners,
+    have_no_planners: Event Planner profile has not been created,
     not_an_investor: You are not a venue,
     default_text_for_proposal_review: Please review this proposal.
     enter_recipient_names: Recipient name ...
     enter_venue_names: Venue names ...
     no_more_selections_allowed: No more selections are allowed.
     message_is_archived: The message is archived.
+    no_messages: No messages at this time
 

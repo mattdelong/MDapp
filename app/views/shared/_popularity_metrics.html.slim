@@ -1,0 +1,10 @@
+- unless resource == current_user
+  .follow_button
+    = follow_button(resource)
+
+ul.popularity_metrics
+    li
+      .label= t 'label.comments'
+      .count= resource.comments_count
+
+.clear

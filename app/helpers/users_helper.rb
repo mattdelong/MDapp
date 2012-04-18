@@ -13,6 +13,7 @@ module UsersHelper
 
   def show_user_roles(user)
     roles = []
+    roles << t('label.new_user') if user.is_new_user?
     roles << t('label.planner') if user.is_planner?
     roles << t('label.venue') if user.is_venue?
 

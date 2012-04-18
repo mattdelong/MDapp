@@ -15,7 +15,7 @@ development:
   database: venuescout_development
   pool: 5
   username: root
-  password:
+  password: twisted
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: venuescout_test
   pool: 5
   username: root
-  password:
+  password: twisted
   host: localhost
 
 production:
@@ -38,5 +38,5 @@ production:
   database: venuescout_production
   pool: 5
   username: root
-  password:
+  password: twisted
   host: localhost

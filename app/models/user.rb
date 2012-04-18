@@ -11,10 +11,17 @@ class User < ActiveRecord::Base
          :validatable
 
   attr_accessor   :login
-  attr_accessible :email, 
+  attr_accessible :login,
+  				  :email, 
+  				  :name,
+  				  :username,
   				  :password, 
   				  :password_confirmation, 
   				  :remember_me
+  				  
+  has_many :messages, :order => 'created_at DESC'
+
+  has_one  :venue_profile
   				  
   has_and_belongs_to_many :proposals, :join_table => :proposal_for_venues
   
@@ -30,8 +37,8 @@ class User < ActiveRecord::Base
                        :length       => { :within => 4..30 }
 
   scope :new_users,     joins { [planner_users.outer, venue.outer] }.where { (planner_users.user_email == nil) & (venue.user_id == nil) }
-  scope :event_planners, joins { planner_users }.where { planner_users.user_email != nil }
-  scope :venues,     joins { venue }.where { venue.user_id != nil }
+  scope :planners, joins { planner_users }.where { planner_users.user_email != nil }
+  scope :venues,     joins { venue_profile }.where { venue_profile.user_id != nil }
               
   before_save :email_nomarlisation
 
@@ -80,15 +87,15 @@ class User < ActiveRecord::Base
   end
   
   def is_new_user?
-    !is_event_planner? && !is_venue?
+    !is_planner? && !is_venue?
   end
 
-  def is_event_planner?
+  def is_planner?
     planners.present?
   end
 
   def is_venue?
-    venue.present?
+    venue_profile.present?
   end
 
   def avatar(size = 80)
@@ -113,6 +120,20 @@ class User < ActiveRecord::Base
       :topic_id    => topic.id
     }.merge(extras)) && reload
   end
+  
+  def add_micro_post(content)
+    unless content.blank?
+      messages.create(:content => content) && reload
+      true
+    else
+      false
+    end
+  end
+
+  def micro_posts
+    messages.micro_posts
+  end
+
 
 
   

@@ -12,15 +12,15 @@ class UsersController < ApplicationController
     end
   end
   
-=begin # To display micro posts feed in user view templates - not yet implemented
-   def home
-    @micro_posts = resource.followed_micro_posts.page(params[:p])
+# To display micro posts feed in user view templates - not yet implemented
+  def home
+    #@micro_posts = resource.followed_micro_posts.page(params[:p])
+    @micro_posts = resource.micro_posts.page(params[:p])
   end
 
   def show
     @micro_posts = resource.micro_posts.page(params[:p])
   end
-=end
   
   def message_inboxes
     message_type = params[:type].try(:to_sym)
@@ -38,6 +38,15 @@ class UsersController < ApplicationController
     case message_type
       when /_messages/  then render 'message_inboxes'
       when /_proposals/ then render 'proposal_inboxes'
+    end
+  end
+  
+  def add_micro_post
+    result = current_user.add_micro_post(params[:message][:content])
+
+    respond_to do |format|
+      format.json { render :json => result }
+      format.html { redirect_to :back }
     end
   end
   
