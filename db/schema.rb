@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111111041451) do
+ActiveRecord::Schema.define(:version => 20120418210906) do
 
   create_table "messages", :force => true do |t|
     t.text     "content"
@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(:version => 20111111041451) do
     t.integer  "comments_count"
     t.integer  "messages_count"
     t.boolean  "is_admin"
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

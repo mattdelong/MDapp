@@ -321,12 +321,12 @@ nav.pagination {
 
 #header-container {
   margin-top: $viewport_margin;
-  padding-top: $viewport_padding;
+  padding-top: $viewport_padding; 
 
   h1 {
     display: block;
     font-size: 30px;
-    padding: 10px 0;
+    padding: 10px 0 0 5px;
 
     a {
       text-decoration: none;
@@ -352,6 +352,7 @@ nav.pagination {
     position: absolute;
     top: $viewport_padding;
     right: $viewport_padding;
+    padding: 0 0 0 5px;
   }
 
   hr {

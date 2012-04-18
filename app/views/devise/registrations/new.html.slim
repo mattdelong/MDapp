@@ -5,6 +5,7 @@ h1= t('label.sign_up')
   = f.input :email
   = f.input :password
   = f.input :password_confirmation, :required => true
+  = f.radio_button :role
   = f.button :submit, t('label.sign_up')
 
 = render 'devise/shared/links'

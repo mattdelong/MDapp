@@ -77290,3 +77290,857 @@ Served asset /private_message.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-18 07:32:35 -0700
 Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-18 13:34:11 -0700
+Processing by UsersController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered messages/_new.html.slim (97.0ms)
+  [1m[35m (1.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `messages` WHERE `messages`.`user_id` = 1 AND `messages`.`target_id` IS NULL LIMIT 25 OFFSET 0) subquery_for_count 
+  Rendered messages/_index.html.slim (10.0ms)
+  Rendered users/home.html.slim within layouts/application (224.0ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NOT NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0
+  Rendered layouts/userbars/_topnav.html.slim (92.0ms)
+  Rendered users/_avatar.html.slim (3.0ms)
+  Rendered shared/_popularity_metrics.html.slim (3.0ms)
+  Rendered users/_mini_profile.html.slim (20.0ms)
+  [1m[36mPlanner Load (1.0ms)[0m  [1mSELECT `planners`.* FROM `planners` INNER JOIN `planner_users` ON `planners`.`id` = `planner_users`.`planner_id` WHERE `planner_users`.`user_email` = 'matt@gmail.com'[0m
+  Rendered users/_planners.html.slim (156.0ms)
+  Rendered layouts/sidebars/_user.html.slim (190.0ms)
+Completed 200 OK in 1496ms (Views: 949.1ms | ActiveRecord: 35.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-18 13:34:13 -0700
+Served asset /application.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/inc/jquery.slideshow.lite.css?body=1" for 127.0.0.1 at 2012-04-18 13:34:13 -0700
+Served asset /inc/jquery.slideshow.lite.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/inc/html5-boilerplate.css?body=1" for 127.0.0.1 at 2012-04-18 13:34:13 -0700
+Served asset /inc/html5-boilerplate.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/inc/jquery.autoSuggest.css?body=1" for 127.0.0.1 at 2012-04-18 13:34:13 -0700
+Served asset /inc/jquery.autoSuggest.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/inc/960_12_10_10.css?body=1" for 127.0.0.1 at 2012-04-18 13:34:13 -0700
+Served asset /inc/960_12_10_10.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/inc/reset.css?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /inc/reset.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /style.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/venues.css?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /venues.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /modernizr.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/rails.validations.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /rails.validations.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/_global_variables.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /_global_variables.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/concerns/editable.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /concerns/editable.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/concerns/form.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /concerns/form.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/concerns/gallery.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /concerns/gallery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/libs/jquery/jquery.autoSuggest.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /libs/jquery/jquery.autoSuggest.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/libs/jquery/jquery.elastic.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /libs/jquery/jquery.elastic.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/libs/jquery/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /libs/jquery/jquery.fancybox.pack.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/libs/jquery/jquery.form.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /libs/jquery/jquery.form.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/libs/jquery/jquery.livequery.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:14 -0700
+Served asset /libs/jquery/jquery.livequery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/libs/jquery/jquery.slideshow.lite.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:15 -0700
+Served asset /libs/jquery/jquery.slideshow.lite.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/libs/nested_form.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:15 -0700
+Served asset /libs/nested_form.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/private_message.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:15 -0700
+Served asset /private_message.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-18 13:34:15 -0700
+Served asset /application.js - 304 Not Modified (35ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-18 13:41:15 -0700
+Processing by UsersController#home as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered messages/_new.html.slim (6.0ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `messages` WHERE `messages`.`user_id` = 1 AND `messages`.`target_id` IS NULL LIMIT 25 OFFSET 0) subquery_for_count [0m
+  Rendered messages/_index.html.slim (3.0ms)
+  Rendered users/home.html.slim within layouts/application (18.0ms)
+Compiled style.css  (237ms)  (pid 2324)
+Compiled application.css  (3ms)  (pid 2324)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NOT NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0[0m
+  Rendered layouts/userbars/_topnav.html.slim (11.0ms)
+  Rendered users/_avatar.html.slim (1.0ms)
+  Rendered shared/_popularity_metrics.html.slim (1.0ms)
+  Rendered users/_mini_profile.html.slim (9.0ms)
+  [1m[35mPlanner Load (0.0ms)[0m  SELECT `planners`.* FROM `planners` INNER JOIN `planner_users` ON `planners`.`id` = `planner_users`.`planner_id` WHERE `planner_users`.`user_email` = 'matt@gmail.com'
+  Rendered users/_planners.html.slim (3.0ms)
+  Rendered layouts/sidebars/_user.html.slim (19.0ms)
+Completed 200 OK in 462ms (Views: 451.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/inc/html5-boilerplate.css?body=1" for 127.0.0.1 at 2012-04-18 13:41:15 -0700
+Served asset /inc/html5-boilerplate.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/inc/jquery.autoSuggest.css?body=1" for 127.0.0.1 at 2012-04-18 13:41:15 -0700
+Served asset /inc/jquery.autoSuggest.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-18 13:41:15 -0700
+Served asset /application.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/inc/960_12_10_10.css?body=1" for 127.0.0.1 at 2012-04-18 13:41:15 -0700
+Served asset /inc/960_12_10_10.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/reset.css?body=1" for 127.0.0.1 at 2012-04-18 13:41:15 -0700
+Served asset /inc/reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/jquery.slideshow.lite.css?body=1" for 127.0.0.1 at 2012-04-18 13:41:15 -0700
+Served asset /inc/jquery.slideshow.lite.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /style.css - 200 OK (5ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.validations.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /rails.validations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/_global_variables.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /_global_variables.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/editable.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /concerns/editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/form.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /concerns/form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/gallery.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /concerns/gallery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.autoSuggest.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /libs/jquery/jquery.autoSuggest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.elastic.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /libs/jquery/jquery.elastic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /libs/jquery/jquery.fancybox.pack.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/jquery/jquery.form.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /libs/jquery/jquery.form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.livequery.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:16 -0700
+Served asset /libs/jquery/jquery.livequery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.slideshow.lite.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:17 -0700
+Served asset /libs/jquery/jquery.slideshow.lite.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/nested_form.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:17 -0700
+Served asset /libs/nested_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_message.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:17 -0700
+Served asset /private_message.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-18 13:41:17 -0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/venues" for 127.0.0.1 at 2012-04-18 13:42:08 -0700
+Processing by VenuesController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` INNER JOIN `venue_profiles` ON `venue_profiles`.`user_id` = `users`.`id` WHERE `venue_profiles`.`user_id` IS NOT NULL LIMIT 25 OFFSET 0
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `users` INNER JOIN `venue_profiles` ON `venue_profiles`.`user_id` = `users`.`id` WHERE `venue_profiles`.`user_id` IS NOT NULL[0m
+  Rendered users/_index.html.slim within layouts/application (44.0ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NOT NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0[0m
+  Rendered layouts/userbars/_topnav.html.slim (10.0ms)
+  Rendered users/_avatar.html.slim (0.0ms)
+  Rendered shared/_popularity_metrics.html.slim (0.0ms)
+  Rendered users/_mini_profile.html.slim (9.0ms)
+  [1m[35mPlanner Load (1.0ms)[0m  SELECT `planners`.* FROM `planners` INNER JOIN `planner_users` ON `planners`.`id` = `planner_users`.`planner_id` WHERE `planner_users`.`user_email` = 'matt@gmail.com'
+  Rendered users/_planners.html.slim (3.0ms)
+  Rendered layouts/sidebars/_user.html.slim (20.0ms)
+Completed 200 OK in 132ms (Views: 115.0ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/assets/inc/960_12_10_10.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /inc/960_12_10_10.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/inc/jquery.autoSuggest.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /inc/jquery.autoSuggest.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/html5-boilerplate.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /inc/html5-boilerplate.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/jquery.slideshow.lite.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /inc/jquery.slideshow.lite.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/reset.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /inc/reset.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/_global_variables.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /_global_variables.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.validations.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /rails.validations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /concerns/form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/editable.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:09 -0700
+Served asset /concerns/editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/gallery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:10 -0700
+Served asset /concerns/gallery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.elastic.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:10 -0700
+Served asset /libs/jquery/jquery.elastic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.autoSuggest.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:10 -0700
+Served asset /libs/jquery/jquery.autoSuggest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:10 -0700
+Served asset /libs/jquery/jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:10 -0700
+Served asset /libs/jquery/jquery.form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.livequery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:10 -0700
+Served asset /libs/jquery/jquery.livequery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.slideshow.lite.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:10 -0700
+Served asset /libs/jquery/jquery.slideshow.lite.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/nested_form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:10 -0700
+Served asset /libs/nested_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_message.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:10 -0700
+Served asset /private_message.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:10 -0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/_global_variables.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:10 -0700
+Served asset /_global_variables.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/editable.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:11 -0700
+Served asset /concerns/editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:11 -0700
+Served asset /concerns/form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/gallery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:11 -0700
+Served asset /concerns/gallery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.autoSuggest.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:11 -0700
+Served asset /libs/jquery/jquery.autoSuggest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.elastic.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:11 -0700
+Served asset /libs/jquery/jquery.elastic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:11 -0700
+Served asset /libs/jquery/jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:12 -0700
+Served asset /libs/jquery/jquery.form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.livequery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:12 -0700
+Served asset /libs/jquery/jquery.livequery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.slideshow.lite.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:12 -0700
+Served asset /libs/jquery/jquery.slideshow.lite.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/nested_form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:12 -0700
+Served asset /libs/nested_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_message.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:12 -0700
+Served asset /private_message.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:12 -0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/planners" for 127.0.0.1 at 2012-04-18 13:42:15 -0700
+
+ActionController::RoutingError (uninitialized constant Planner::LogoUploader):
+  app/models/planner.rb:5:in `<class:Planner>'
+  app/models/planner.rb:1:in `<top (required)>'
+  app/controllers/planners_controller.rb:1:in `<top (required)>'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Processing by UsersController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered messages/_new.html.slim (6.0ms)
+  [1m[35m (1.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `messages` WHERE `messages`.`user_id` = 1 AND `messages`.`target_id` IS NULL LIMIT 25 OFFSET 0) subquery_for_count 
+  Rendered messages/_index.html.slim (3.0ms)
+  Rendered users/home.html.slim within layouts/application (17.0ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NOT NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0
+  Rendered layouts/userbars/_topnav.html.slim (10.0ms)
+  Rendered users/_avatar.html.slim (1.0ms)
+  Rendered shared/_popularity_metrics.html.slim (0.0ms)
+  Rendered users/_mini_profile.html.slim (10.0ms)
+  [1m[36mPlanner Load (0.0ms)[0m  [1mSELECT `planners`.* FROM `planners` INNER JOIN `planner_users` ON `planners`.`id` = `planner_users`.`planner_id` WHERE `planner_users`.`user_email` = 'matt@gmail.com'[0m
+  Rendered users/_planners.html.slim (3.0ms)
+  Rendered layouts/sidebars/_user.html.slim (19.0ms)
+Completed 200 OK in 123ms (Views: 111.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/inc/jquery.slideshow.lite.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Served asset /inc/jquery.slideshow.lite.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/html5-boilerplate.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Served asset /inc/html5-boilerplate.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/inc/jquery.autoSuggest.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Served asset /inc/jquery.autoSuggest.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/960_12_10_10.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Served asset /inc/960_12_10_10.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/reset.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Served asset /inc/reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/rails.validations.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:19 -0700
+Served asset /rails.validations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/_global_variables.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /_global_variables.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/editable.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /concerns/editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /concerns/form.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/jquery/jquery.autoSuggest.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /libs/jquery/jquery.autoSuggest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/gallery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /concerns/gallery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.elastic.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /libs/jquery/jquery.elastic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /libs/jquery/jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.livequery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /libs/jquery/jquery.livequery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /libs/jquery/jquery.form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.slideshow.lite.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /libs/jquery/jquery.slideshow.lite.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/nested_form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /libs/nested_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_message.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /private_message.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/libs/jquery/jquery.autoSuggest.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:20 -0700
+Served asset /libs/jquery/jquery.autoSuggest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.elastic.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:21 -0700
+Served asset /libs/jquery/jquery.elastic.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/jquery/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:21 -0700
+Served asset /libs/jquery/jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:21 -0700
+Served asset /libs/jquery/jquery.form.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/jquery/jquery.livequery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:21 -0700
+Served asset /libs/jquery/jquery.livequery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/jquery/jquery.slideshow.lite.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:21 -0700
+Served asset /libs/jquery/jquery.slideshow.lite.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/nested_form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:22 -0700
+Served asset /libs/nested_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_message.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:22 -0700
+Served asset /private_message.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:22 -0700
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/my/message_inboxes/inbox_proposals" for 127.0.0.1 at 2012-04-18 13:42:24 -0700
+Processing by UsersController#message_inboxes as HTML
+  Parameters: {"type"=>"inbox_proposals"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered users/_avatar.html.slim (1.0ms)
+  Rendered shared/_popularity_metrics.html.slim (0.0ms)
+  Rendered users/_mini_profile.html.slim (11.0ms)
+  Rendered users/_proposal_inboxes.html.slim (21.0ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NOT NULL AND `messages`.`is_archived` = 0[0m
+  Rendered messages/_index.html.slim (3.0ms)
+  Rendered users/proposal_inboxes.html.slim within layouts/application (37.0ms)
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NOT NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0[0m
+  Rendered layouts/userbars/_topnav.html.slim (9.0ms)
+Completed 200 OK in 92ms (Views: 80.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:24 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/inc/html5-boilerplate.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:24 -0700
+Served asset /inc/html5-boilerplate.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/960_12_10_10.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /inc/960_12_10_10.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/jquery.autoSuggest.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /inc/jquery.autoSuggest.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/jquery.slideshow.lite.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /inc/jquery.slideshow.lite.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/reset.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /inc/reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.validations.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /rails.validations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/editable.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /concerns/editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/_global_variables.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /_global_variables.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /concerns/form.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/concerns/gallery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /concerns/gallery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.elastic.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /libs/jquery/jquery.elastic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.autoSuggest.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /libs/jquery/jquery.autoSuggest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /libs/jquery/jquery.fancybox.pack.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/jquery/jquery.form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:25 -0700
+Served asset /libs/jquery/jquery.form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.livequery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:26 -0700
+Served asset /libs/jquery/jquery.livequery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.slideshow.lite.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:26 -0700
+Served asset /libs/jquery/jquery.slideshow.lite.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/nested_form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:26 -0700
+Served asset /libs/nested_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_message.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:26 -0700
+Served asset /private_message.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:26 -0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/u/mattdng" for 127.0.0.1 at 2012-04-18 13:42:39 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"mattdng"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'mattdng' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`username` = 'mattdng' LIMIT 1
+  Rendered users/_avatar.html.slim (1.0ms)
+  [1m[36mPlanner Load (1.0ms)[0m  [1mSELECT `planners`.* FROM `planners` INNER JOIN `planner_users` ON `planners`.`id` = `planner_users`.`planner_id` WHERE `planner_users`.`user_email` = 'matt@gmail.com'[0m
+  [1m[35mVenueProfile Load (0.0ms)[0m  SELECT `venue_profiles`.* FROM `venue_profiles` WHERE `venue_profiles`.`user_id` = 1 LIMIT 1
+  Rendered shared/_popularity_metrics.html.slim (0.0ms)
+  Rendered users/_mini_profile.html.slim (136.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'mattdng' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `planners`.* FROM `planners` INNER JOIN `planner_users` ON `planners`.`id` = `planner_users`.`planner_id` WHERE `planner_users`.`user_email` = 'matt@gmail.com'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`username` = 'mattdng' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `venue_profiles`.* FROM `venue_profiles` WHERE `venue_profiles`.`user_id` = 1 LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `messages` WHERE `messages`.`user_id` = 1 AND `messages`.`target_id` IS NULL LIMIT 25 OFFSET 0) subquery_for_count [0m
+  Rendered messages/_index.html.slim (2.0ms)
+  Rendered users/show.html.slim within layouts/application (154.0ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NOT NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`target_id` = 1 AND `messages`.`target_type` = 'User' AND `messages`.`is_private` = 1 AND `messages`.`topic_id` IS NULL AND `messages`.`proposal_id` IS NULL AND `messages`.`is_archived` = 0 AND `messages`.`is_read` = 0[0m
+  Rendered layouts/userbars/_topnav.html.slim (10.0ms)
+Completed 200 OK in 207ms (Views: 195.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:39 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/inc/960_12_10_10.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:39 -0700
+Served asset /inc/960_12_10_10.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/html5-boilerplate.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /inc/html5-boilerplate.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/inc/jquery.slideshow.lite.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /inc/jquery.slideshow.lite.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/jquery.autoSuggest.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /inc/jquery.autoSuggest.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inc/reset.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /inc/reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.validations.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /rails.validations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/editable.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /concerns/editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/_global_variables.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /_global_variables.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/concerns/form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /concerns/form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/gallery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /concerns/gallery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.autoSuggest.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /libs/jquery/jquery.autoSuggest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.elastic.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /libs/jquery/jquery.elastic.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/jquery/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:40 -0700
+Served asset /libs/jquery/jquery.fancybox.pack.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/jquery/jquery.form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:41 -0700
+Served asset /libs/jquery/jquery.form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.livequery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:41 -0700
+Served asset /libs/jquery/jquery.livequery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.slideshow.lite.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:41 -0700
+Served asset /libs/jquery/jquery.slideshow.lite.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/nested_form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:41 -0700
+Served asset /libs/nested_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_message.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:41 -0700
+Served asset /private_message.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:41 -0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/concerns/editable.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:41 -0700
+Served asset /concerns/editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:41 -0700
+Served asset /concerns/form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/concerns/gallery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:41 -0700
+Served asset /concerns/gallery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/jquery/jquery.autoSuggest.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:42 -0700
+Served asset /libs/jquery/jquery.autoSuggest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.elastic.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:42 -0700
+Served asset /libs/jquery/jquery.elastic.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:42 -0700
+Served asset /libs/jquery/jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:42 -0700
+Served asset /libs/jquery/jquery.form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.livequery.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:42 -0700
+Served asset /libs/jquery/jquery.livequery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery/jquery.slideshow.lite.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:43 -0700
+Served asset /libs/jquery/jquery.slideshow.lite.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/nested_form.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:43 -0700
+Served asset /libs/nested_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/private_message.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:43 -0700
+Served asset /private_message.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-18 13:42:43 -0700
+Served asset /application.js - 304 Not Modified (3ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20120129060746)
+  [1m[35m (23.0ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `username` varchar(255), `name` varchar(255), `location` varchar(255), `introduction` varchar(255), `messages_count` int(11), `is_admin` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Mysql2::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `username` varchar(255), `name` varchar(255), `location` varchar(255), `introduction` varchar(255), `messages_count` int(11), `is_admin` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (1.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to Addroletouser (20120418210906)
+  [1m[35m (210.0ms)[0m  ALTER TABLE `users` ADD `role` varchar(255)
+  [1m[36m (4.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120418210906')[0m
+  [1m[35m (0.0ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
