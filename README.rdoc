@@ -1,43 +1,12 @@
-## Venue Scout (RoR)
-Venue Scout (RoR) is the continued development effort of the Ruby on Rails project originally commissioned by the founder. Over the past 6 months I have continued developement on non-proprietary bits and pieces of the app post working with VS for the purpose of open source project reference, 
+
+## Overview
+
+This project is being done as an extension of the work originally commissioned by Venue Scout with the intent to integrate additonal feature developement, enhancements and maintenance done independently as open source post working with Venue Scout. The project branch is a collaboration of both of these sources and spans over several self-contained repositories and different versions of Rails. The goal is to merge branches, stabalize the basic app framework, merge the feature set and end up with a stable platform from which continued development of the Venue Scout application can occur inline with their business model. 
 
 
-
-
-
-================================================== 
-The Stack:
+## The Stack:
 
 Ruby 1.9.3
-Rails 3.2.1
-MySQL
+Rails 3.2.3
+MySQL 5.5
 
-==================================================
-
-In Progress:
-Some of the data models are considered partially content complete as it relates to the VS specification. Generally this is intentional to keep 
-
-
-==================================================
-
-#code for venue model to format the URL link to their website
-def url=(new_url)
-  write_attribute :url, Link.add_http(new_url)
-end
-
-=======================================================
-.planner.html.erb
-=======================================================
- <% if @user.rfps.any? %>
-      <table>
-	    <% @user.rfps.each do |rfp| %>
-  	      <tr>
-            <td> <h2> <%= link_to rfp.title, rfp %> </h2> </td>
-            <td> <%= link_to 'Edit', edit_rfp_path(rfp) %></td>
-            <td> <%= link_to 'Remove', rfp, :confirm => 'Are you sure?', :method => :delete  %></td>
-          </tr>
-        <% end %>
-      </table>
-    <% else %>
-      <p> <%= t('label.no_proposals')%> </p>
-    <% end %>
