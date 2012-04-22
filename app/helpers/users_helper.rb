@@ -16,6 +16,7 @@ module UsersHelper
     roles << t('label.new_user') if user.is_new_user?
     roles << t('label.planner') if user.is_planner?
     roles << t('label.venue') if user.is_venue?
+    roles << t('label.provider') if user.is_provider?
 
     if roles.any?
       " (#{roles * ', '})".html_safe

@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
   				  :username,
   				  :password, 
   				  :password_confirmation, 
-  				  :remember_me
+  				  :remember_me,
+  				  :role
   				  
   has_many :messages, :order => 'created_at DESC'
 
@@ -37,8 +38,8 @@ class User < ActiveRecord::Base
                        :length       => { :within => 4..30 }
 
   scope :new_users,     joins { [planner_users.outer, venue.outer] }.where { (planner_users.user_email == nil) & (venue.user_id == nil) }
-  scope :planners, joins { planner_users }.where { planner_users.user_email != nil }
-  scope :venues,     joins { venue_profile }.where { venue_profile.user_id != nil }
+  scope :planners, 		joins { planner_users }.where { planner_users.user_email != nil }
+  scope :venues,     	joins { venue_profile }.where { venue_profile.user_id != nil }
               
   before_save :email_nomarlisation
 
@@ -87,15 +88,19 @@ class User < ActiveRecord::Base
   end
   
   def is_new_user?
-    !is_planner? && !is_venue?
+    !is_planner? && !is_venue? && !is_provider?
   end
 
   def is_planner?
-    planners.present?
+    user.role == 'planner'
   end
 
   def is_venue?
-    venue_profile.present?
+    user.role == 'venue'
+  end
+  
+  def is_provider?
+  	user.role == 'provider'
   end
 
   def avatar(size = 80)
@@ -134,9 +139,6 @@ class User < ActiveRecord::Base
     messages.micro_posts
   end
 
-
-
-  
   protected
   
   # Devise's support for login using the :login virtual attribute

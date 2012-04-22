@@ -2,12 +2,14 @@ h1= t('label.sign_up')
 = simple_form_for resource, :url => registration_path(resource_name), :validate => false do |f|
   = f.input :username
   = f.input :name
-  = f.input :email
-  = f.input :password
+  = f.input :email, :required => true
+  = f.input :password, :required => true
   = f.input :password_confirmation, :required => true
-  = f.radio_button :role, 'event_planner' | Event Planner
-  = f.radio_button :role, 'venue_manager' | Venue Manager / Event Coordinator
-  = f.radio_button :role, 'service_provider' | Service Provider / Supplier (i.e. Caterer, DJ, Equipment Rental)
+  h3
+    | Choose the appropriate user type (Event Planner, Venue Owner, Service Provider) from the list
+  = f.radio_button :role, 'planner', :checked => true  
+  = f.radio_button :role, 'venue'
+  = f.radio_button :role, 'provider' 
   = f.button :submit, t('label.sign_up')
 
 = render 'devise/shared/links'

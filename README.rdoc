@@ -10,3 +10,11 @@ Ruby 1.9.3
 Rails 3.2.3
 MySQL 5.5
 
+
+## Work In Progress
+
+* Data model to support "Service Providers" as a user type in the User Resource. Will include interface support for Service Provider specific functionality.
+* A wrapper for the LinkedIn Oauth api to auto-populate the expanded Planner & Provider profiles with all available user data from LI profile_fields. 
+* Completion of ML algorithm for the Venue Matching System and subsequent tasks for model and interface support of the feature.  
+
+

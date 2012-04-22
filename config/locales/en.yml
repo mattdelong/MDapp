@@ -60,7 +60,7 @@ en:
     member: Member
     sign_in: Sign in
     sign_out: Sign out
-    sign_up: Sign up
+    sign_up: Sign up for Venue Scout
     new_password: New password
     confirm_new_password: Confirm new password
     change_my_password: Change my password
@@ -74,8 +74,9 @@ en:
     new_user: New User
     planner: Event Planner
     planners: Planners
-    venue: Venue Manager / Owner
+    venue: Venue Owner/Manager/Event Coordinator
     venues: Venues
+    provider: Service Provider 
     organizer: Organizer
     title: Title
     members: Event Planning Members

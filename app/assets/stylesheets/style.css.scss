@@ -1,8 +1,6 @@
-/* ------------------------------
-  Author: Fred Wu
------------------------------- */
 
-// colours
+
+// colors
 
 $error_colour:              #e3302c;
 
@@ -19,7 +17,7 @@ $button_colour_secondary:   lighten($secondary_colour, 90%);
 $button_colour_secondary_h: lighten($secondary_colour, 80%);
 
 $bg_colour_primary:         lighten($primary_colour, 70%);
-$bg_colour_secondary:       lighten($primary_colour, 60%);
+$bg_colour_secondary:       #E0E0E0;
 
 // functional colour assignments
 
@@ -37,6 +35,7 @@ $font_size_tiny:   11px;
 $h1_size:          20px;
 $h2_size:          16px;
 $h3_size:          14px;
+$h4_size:		   11px;
 
 $max_width:        99%;
 
@@ -46,6 +45,7 @@ $grid_cell:        $grid_cell_width + $grid_cell_margin * 2;
 
 $viewport_width:   960px;
 $viewport_margin:  30px;
+$viewport_margin_top: 5px;
 $viewport_padding: 20px;
 
 $header_hr_height: 5px;
@@ -184,7 +184,7 @@ div.message {
 ------------------------------ */
 
 form {
-  $input_height: 24px;
+  $input_height: 28px;
 
   fieldset {
     legend {
@@ -221,6 +221,7 @@ form {
 
   input[type='submit'],
   input[type='button'],
+  input[type='radio'],
   input.button,
   button {
     margin-left: $input_margin;
@@ -319,9 +320,19 @@ nav.pagination {
   header
 ------------------------------ */
 
+.container_0 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  width: 100%;
+  border-bottom: 1px solid $secondary_colour_h;
+}
+
 #header-container {
-  margin-top: $viewport_margin;
+  margin-top: $viewport_margin_top;
   padding-top: $viewport_padding; 
+  padding-left: $viewport_padding;
+  background: #fff;
 
   h1 {
     display: block;
@@ -355,13 +366,6 @@ nav.pagination {
     padding: 0 0 0 5px;
   }
 
-  hr {
-    width: $viewport_width + $viewport_padding * 2;
-    margin: 0;
-    margin-left: -$viewport_padding;
-    height: $header_hr_height;
-    background: $secondary_colour_h;
-  }
 }
 
 /* ------------------------------
@@ -371,6 +375,7 @@ nav.pagination {
 #main {
   padding-top: $viewport_padding;
   padding-bottom: $viewport_padding;
+  margin-top: $viewport_margin;
 
   .grid_3, .grid_6, .grid_9, .grid_12 {
     position: relative;
@@ -387,6 +392,10 @@ nav.pagination {
 
   h2 {
     font-size: $h2_size;
+  }
+  
+  h3 {
+    font-size: $h3_size;
   }
 
   .create_new {

@@ -1,9 +1,4 @@
 hr
 
 h3= t('label.planners')
-- if user.is_planner?
-  = render 'events/mini_index', :collection => user.planners.involved, :user => user, :can_create_new => true
-- else
-  p
-    =' t('text.have_no_planners')
-    = link_to t('label.create_one_now'), new_user_planner_path(user)
+= link_to t('label.create_one_now'), new_user_planner_path(user)
