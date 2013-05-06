@@ -37,9 +37,6 @@ class User < ActiveRecord::Base
   validates :name,     :presence     => true,
                        :length       => { :within => 4..30 }
 
-  scope :new_users,     joins { [planner_users.outer, venue.outer] }.where { (planner_users.user_email == nil) & (venue.user_id == nil) }
-  scope :planners, 		joins { planner_users }.where { planner_users.user_email != nil }
-  scope :venues,     	joins { venue_profile }.where { venue_profile.user_id != nil }
               
   before_save :email_nomarlisation
 

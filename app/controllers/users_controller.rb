@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     end
   end
   
-# To display micro posts feed in user view templates - not yet implemented
+# To display micro posts feed in user view 
   def home
     #@micro_posts = resource.followed_micro_posts.page(params[:p])
     @micro_posts = resource.micro_posts.page(params[:p])

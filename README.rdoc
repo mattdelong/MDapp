@@ -1,20 +1,10 @@
 
-## Overview
+This app uses Slim as the template engine. You will need to include slim-rails in your gem file:
 
-This project is being done as an extension of the work originally commissioned by Venue Scout with the intent to integrate additonal feature developement, enhancements and maintenance done independently as open source post working with Venue Scout. The project branch is a collaboration of both of these sources and spans over several self-contained repositories and different versions of Rails. The goal is to merge branches, stabalize the basic app framework, merge the feature set and end up with a stable platform from which continued development of the Venue Scout application can occur inline with their business model. 
-
-
-## The Stack:
-
-Ruby 1.9.3
-Rails 3.2.3
-MySQL 5.5
+gem "slim-rails"
 
 
-## Work In Progress
 
-* Data model to support "Service Providers" as a user type in the User Resource. Will include interface support for Service Provider specific functionality.
-* A wrapper for the LinkedIn Oauth api to auto-populate the expanded Planner & Provider profiles with all available user data from LI profile_fields. 
-* Completion of ML algorithm for the Venue Matching System and subsequent tasks for model and interface support of the feature.  
+For more information on Slim including documentation visit: http://slim-lang.com/
 
 

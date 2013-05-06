@@ -5,7 +5,7 @@
   .profile_meta
     h2
       = link_to user.name, username_path(user.username)
-      = show_user_roles(user) if meta[:show_user_roles]
+      = user.role
     ul
       li= user.location
 
