@@ -1,4 +1,4 @@
-Derived from previous branch
+Former branch intended for Venue Scout but the work was never commissioned so it's now an Open Source side project
 
-My work originally intended for Venue Scout but the work was never properly commissioned so now it is an Open Source side project. 
+
 =====
